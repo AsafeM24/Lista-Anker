@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/medio 2/">
+    <Project Path="medio 2/ConsoleApp1/ConsoleApp1.csproj" />
+  </Folder>
+  <Folder Name="/medio 3/">
+    <Project Path="medio 3/ConsoleApp1/ConsoleApp1.csproj" />
+  </Folder>
+  <Folder Name="/medio 4/">
+    <Project Path="medio 4/ConsoleApp1/ConsoleApp1.csproj" />
+  </Folder>
+</Solution>

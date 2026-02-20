@@ -67,8 +67,8 @@ class Cachorro : Animal
     public override void ExibirDados()
     {
         base.ExibirDados();
-        Console.WriteLine($"Raça do Cachorro: {get_raça}");
-        Console.WriteLine($"Porte do Cachorro: {get_porte}");
+        Console.WriteLine($"Raça do Cachorro: {get_raça()}");
+        Console.WriteLine($"Porte do Cachorro: {get_porte()}");
     }
 }
 class Gato : Animal
@@ -99,13 +99,76 @@ class Gato : Animal
     public override void ExibirDados()
     {
         base.ExibirDados();
-        Console.WriteLine($"Condição de castragem: {get_castrado}");
-        Console.WriteLine($"Tipo de Pelagem: {get_tipoPelagem}");
+        Console.WriteLine($"Condição de castragem: {get_castrado()}");
+        Console.WriteLine($"Tipo de Pelagem: {get_tipoPelagem()}");
     }
 }
 class Peixe : Animal
 {
-    protected string _espécie, tipoAgua;
+    protected string _espécie, _tipoAgua;
 
-    
+    public Peixe(string nome, int idade, string espécie, string tipoAgua) : base(nome, idade)
+    {
+        _espécie = espécie;
+        _tipoAgua = tipoAgua;
+    }
+
+
+}
+class Programa
+{
+    static void Main()
+    {
+        Animal[] animais = new Animal[5];
+        int qntdCachorro = 0;
+        int qntdGato = 0;
+        int qntdPeixe = 0;
+        int i;
+        for (i = 0; i < 5; i++)
+        {
+            Console.WriteLine("Digite o Nome do animal:");
+            string nome = Console.ReadLine()!;
+            Console.WriteLine("Digite a Idade do animal:");
+            string a = Console.ReadLine()!;
+            int.TryParse(a, out int idade);
+            Console.WriteLine("Tipo de Animal: Cachorro/Gato/Peixe: ");
+            string tipo = Console.ReadLine()!.ToLower();
+
+            if (tipo == "cachorro")
+            {
+                Console.WriteLine("Qual a raça:");
+                string raça = Console.ReadLine()!;
+                Console.WriteLine("Qual o porte? Pequeno/Médio/Grande:");
+                string porte = Console.ReadLine()!;
+                animais[i] = new Cachorro(nome, idade, raça, porte);
+                qntdCachorro++;
+            }
+            else if (tipo == "gato")
+            {
+                Console.WriteLine("O gato é Castrado? Sim/Não: ");
+                string castrado = Console.ReadLine()!;
+                Console.WriteLine("Tipo de Pelagem? Curta/Longa");
+                string pelagem = Console.ReadLine()!;
+                animais[i] = new Gato(nome, idade, castrado, pelagem);
+                qntdGato++;
+            }
+
+            else
+            {
+                Console.WriteLine("Qual a espécie do Peixe: ");
+                string espécie = Console.ReadLine()!;
+                Console.WriteLine("Tipo de Água: Doce/Salgado");
+                string tipoAgua = Console.ReadLine()!;
+                animais[i] = new Peixe(nome, idade, espécie, tipoAgua);
+                qntdPeixe++;
+            }
+        }
+        Console.WriteLine("\n--- Dados dos Animais ---");
+
+        for (i = 0; i < 5; i++)
+        {
+            animais[i].ExibirDados();
+            Console.WriteLine("-------------------");
+        }
+    }
 }

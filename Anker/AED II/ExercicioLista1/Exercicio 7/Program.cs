@@ -1,0 +1,47 @@
+﻿
+//Programa 1
+
+import java.util.Scanner;
+public class Codigo
+{
+    public static void main(String[] args)
+    {
+        Scanner teclado = new Scanner(System.in);
+        int codigo;
+
+        System.out.println("Informe o código: ");
+        codigo = teclado.nextInt();
+        while (codigo != -1)
+        {
+            System.out.println("Código: " + codigo);
+            System.out.println("Informe o código: "); //Programa correto, o programa incerra quando o usuario digita -1
+            codigo = teclado.nextInt();
+        }
+    }
+}
+
+//Program 2
+
+import java.util.Scanner;
+public class Codigo
+{
+    public static void main(String[] args)
+    {
+        Scanner teclado = new Scanner(System.in);
+        int codigo;
+
+        do
+        {
+            System.out.print("Informe o código: ");
+            codigo = teclado.nextInt();
+            System.out.println("Código: " + codigo);
+        } while (codigo != -1);
+    }
+}
+
+
+
+//Esse programa mostra o menos -1
+//inserir Console.WriteLine("Código: " + codigo); acima, assim quando o usuario for digitar o -1 o program se encerra sem mostrar o codigo
+//
+

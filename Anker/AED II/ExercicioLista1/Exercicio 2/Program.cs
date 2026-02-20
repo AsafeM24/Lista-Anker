@@ -1,5 +1,5 @@
-﻿using System;
-
+﻿/* 2. Calcule	a	distância	entre	dois	pontos	num espaço	de	3	dimensões.
+ */using System;
 class ddd
 {
 

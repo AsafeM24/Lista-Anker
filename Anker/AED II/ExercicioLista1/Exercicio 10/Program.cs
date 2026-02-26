@@ -27,9 +27,9 @@ class program
 
 
             Console.WriteLine("Insira o valor do investimento");
-            invest = float.Parse(Console.ReadLine());
+            invest = float.Parse(Console.ReadLine()!);
             Console.WriteLine("Digite os juros mensais");
-            juros = float.Parse(Console.ReadLine());
+            juros = float.Parse(Console.ReadLine()!);
 
 
             while (num <= 12)
@@ -46,7 +46,7 @@ class program
             num = 1;
 
             Console.WriteLine("Deseja proseguir para o próximo ano? (S/N)");
-            resp = Console.ReadLine();
+            resp = Console.ReadLine()!;
         }
 
     }
